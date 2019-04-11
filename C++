@@ -21,4 +21,12 @@ C++输入输出方式 cin cout
                cin >> x;//无需关注输入变量类型
                cin >> x >> y;//多个变量赋值
                
-                     
+               输出八进制，十进制，十六进制及布尔型
+               cout<<oct<<x;
+               cout<<dec<<x;
+               cout<<hex<<x;
+               cout<<boolalpha<<y;
+               
+C++命名空间（namespace）调用 A::x B::f1() ...   
+               using namespace B //不指定命名空间的情况下从B中寻找变量或者函数
+               
