@@ -30,3 +30,93 @@ C++输入输出方式 cin cout
 C++命名空间（namespace）调用 A::x B::f1() ...   
                using namespace B //不指定命名空间的情况下从B中寻找变量或者函数
                
+C++引用类型 引用：变量的别名; 引用不能单独定义；
+           结构体类型的引用 typedef struct
+                          {
+                              int x;
+                              int y;
+                          }Coor;
+                          
+                          #include<iostream>
+                          using namespace std;
+                          int main(void)
+                          {
+                              Coor c1;
+                              Coor &c = c1; //引用符号&
+                              c.x=10;
+                              c.y=20;
+                              cout<<c1.x<<c1.y'
+                              return 0;
+                          }
+             指针类型的引用 类型 *&指针引用名 = 指针；
+                          #include<iostream>
+                          using namespace std;
+                          int main(void)
+                          {
+                              int a =10;
+                              int *p = &a;
+                              int *&q = p; //引用
+                              *q=20;
+                              cout<<a<<endl;
+                              return 0;
+                          }
+             引用作为函数参数
+                          void fun(int &a,int &b) //引用
+                          {
+                              int c=0;
+                              c=a;
+                              a=b;
+                              b=c;
+                          }
+                          int x=10,y=20;
+                          fun(x,y)
+                 
+控制变化的const  const int x=3;//常亮，不可更改
+                int x=3;
+                const int*p=&x;
+                //p=&y;正确
+                //*p=4;错误
+                
+                int x=3;
+                int *const p=&x;
+                //p=&y;错误
+                
+                int x=3;
+                const int &y=x;//const与引用
+                //x=10;正确
+                //y=20;错误
+                
+C++函数新亮点 有默认参数值的参数必须在参数表的最右端
+             申明写默认值，定义不写默认值，所有编译器均可通过，推荐这种表达方式
+             
+             函数重载 相同作用域内两个命名相同的函数，但他们的传入参数个数和类型并不相同（参数可辨）
+                     getMax(int x,int y,int z)  编译getMax_int_int_int
+                     getMax(double x,double y)  编译getMax_double_double
+                     
+             内联函数 inline
+                     编译时将函数体代码和实参代替函数调用语句
+                     inline int max(int a,int b,int c);//声明
+                     内联编译是建议性的，由编译器决定
+                     要求内联函数逻辑简单，不能有for while等循环，调用频繁的函数建议使用内联函数
+                     递归函数无法使用内联方式          
+C++内存管理  申请内存 new （运算符）
+            释放内存 delete
+            int *p = new int;
+            delete p;
+            块内存
+            int *arr=new int[10];
+            delete []arr;
+            
+            int *p=new int[1000];
+            if(NULL==P)
+            {
+              //内存分配失败
+              //异常处理
+            }
+            delete []p;
+            p=NULL //避免同一块内存被重复回收
+            
+            
+            
+            
+                     
