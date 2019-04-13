@@ -1,0 +1,54 @@
+C++类与对象 对象实例化 
+                class TV
+                {
+                  public:
+                    char name[20];
+                    int type;
+                    
+                    void changVol();
+                    void power();
+                };//!!!!!!!!
+            从栈中实例化对象
+               int main(void)
+               {
+                TV tv;//定义一个对象
+                tv.type=0;//通过.来访问
+                tv.changeVol();
+                TV [20];//定义对象数组
+                return 0;
+               }
+           从堆中实例化对象
+               int main(void)
+               {
+                TV *p = new TV();//定义一个对象
+                p->type=0;//通过->来访问
+                p->changeVol();
+                TV *q = new TV[20];//定义对象数组
+                for(int i=0;i<20;i++)
+                {
+                  q[i]->type=0;
+                  q[i]->changeVol();
+                }
+                //todo
+                delete p;
+                delete []q;
+                return 0;
+               }
+字符串类型string include<string>
+                初始化
+                    string s1;//s1为空串
+                    string s2("ABC");
+                    string s3(s2);
+                    string s4(n,'c');
+                常用操作
+                    s.empty()
+                    s.size()
+                    s[n]
+                    s1+s2
+                    s1=s2
+                    v1==v2
+                    v1!=v2
+               getline(cin,name);//相比于cin的优点是如果直接输入回车，也可以将回车保存在name中
+
+数据的封装
+               
